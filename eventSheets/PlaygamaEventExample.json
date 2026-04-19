@@ -2,22 +2,22 @@
 	"name": "PlaygamaEventExample",
 	"events": [
 		{
-			"eventType": "variable",
-			"name": "isLocalStorage",
-			"type": "boolean",
-			"initialValue": "true",
-			"comment": "true mean internal storage, false mean platform storage",
-			"isStatic": false,
-			"isConstant": false,
-			"sid": 813632949559089
-		},
-		{
 			"eventType": "group",
 			"disabled": false,
 			"title": "Platform Panel Logic",
 			"description": "",
 			"isActiveOnStart": true,
 			"children": [
+				{
+					"eventType": "variable",
+					"name": "AllGamesData",
+					"type": "string",
+					"initialValue": "",
+					"comment": "",
+					"isStatic": false,
+					"isConstant": false,
+					"sid": 341698138346055
+				},
 				{
 					"eventType": "block",
 					"conditions": [
@@ -352,7 +352,17 @@
 									}
 								}
 							],
-							"actions": [],
+							"actions": [
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 532022244532380,
+									"parameters": {
+										"variable": "AllGamesData",
+										"value": "\"[\" & newline"
+									}
+								}
+							],
 							"sid": 949120303318305,
 							"children": [
 								{
@@ -414,11 +424,55 @@
 												"type": "log",
 												"message": "\"Icon URL:\" & PlaygamaBridge.PlatformAllGamesPropertyValue(loopindex(\"games\"), \"iconURL\")"
 											}
+										},
+										{
+											"id": "add-to-eventvar",
+											"objectClass": "System",
+											"sid": 307328901156573,
+											"parameters": {
+												"variable": "AllGamesData",
+												"value": "\"  {\" & newline & \"    \"\"appID\"\": \"\"\" & PlaygamaBridge.PlatformAllGamesPropertyValue(loopindex(\"games\"), \"appID\") & \"\"\",\" & newline & \"    \"\"title\"\": \"\"\" & PlaygamaBridge.PlatformAllGamesPropertyValue(loopindex(\"games\"), \"title\") & \"\"\",\" & newline & \"    \"\"url\"\": \"\"\" & PlaygamaBridge.PlatformAllGamesPropertyValue(loopindex(\"games\"), \"url\") & \"\"\",\" & newline & \"    \"\"coverURL\"\": \"\"\" & PlaygamaBridge.PlatformAllGamesPropertyValue(loopindex(\"games\"), \"coverURL\") & \"\"\",\" & newline & \"    \"\"iconURL\"\": \"\"\" & PlaygamaBridge.PlatformAllGamesPropertyValue(loopindex(\"games\"), \"iconURL\") & \"\"\"\" & newline & \"  }\" & (loopindex(\"games\") < PlaygamaBridge.PlatformAllGamesCount - 1 ? \",\" : \"\") & newline"
+											}
 										}
 									],
 									"sid": 280665318730303
 								}
 							]
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-two-values",
+									"objectClass": "System",
+									"sid": 520590755161812,
+									"parameters": {
+										"first-value": "PlaygamaBridge.PlatformAllGamesCount",
+										"comparison": 4,
+										"second-value": "0"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 992278117709528,
+									"parameters": {
+										"variable": "AllGamesData",
+										"value": "\"]\""
+									}
+								},
+								{
+									"id": "set-text",
+									"objectClass": "AllGamesDataLabel",
+									"sid": 133751368706432,
+									"parameters": {
+										"text": "AllGamesData"
+									}
+								}
+							],
+							"sid": 255964086763547
 						}
 					]
 				},
@@ -528,6 +582,14 @@
 									"parameters": {
 										"type": "log",
 										"message": "\"Is Available:\" & PlaygamaBridge.PlatformGameByIdPropertyValue(\"isAvailable\")"
+									}
+								},
+								{
+									"id": "set-text",
+									"objectClass": "AllGamesDataLabel",
+									"sid": 197427578426505,
+									"parameters": {
+										"text": "\"{\" & newline & \"  \"\"appID\"\": \"\"\" & PlaygamaBridge.PlatformGameByIdPropertyValue(\"appID\") & \"\"\",\" & newline & \"  \"\"title\"\": \"\"\" & PlaygamaBridge.PlatformGameByIdPropertyValue(\"title\") & \"\"\",\" & newline & \"  \"\"url\"\": \"\"\" & PlaygamaBridge.PlatformGameByIdPropertyValue(\"url\") & \"\"\",\" & newline & \"  \"\"coverURL\"\": \"\"\" & PlaygamaBridge.PlatformGameByIdPropertyValue(\"coverURL\") & \"\"\",\" & newline & \"  \"\"iconURL\"\": \"\"\" & PlaygamaBridge.PlatformGameByIdPropertyValue(\"iconURL\") & \"\"\",\" & newline & \"  \"\"isAvailable\"\": \" & PlaygamaBridge.PlatformGameByIdPropertyValue(\"isAvailable\") & newline & \"}\""
 									}
 								}
 							],
@@ -968,6 +1030,16 @@
 			"description": "",
 			"isActiveOnStart": true,
 			"children": [
+				{
+					"eventType": "variable",
+					"name": "isLocalStorage",
+					"type": "boolean",
+					"initialValue": "true",
+					"comment": "true mean internal storage, false mean platform storage",
+					"isStatic": false,
+					"isConstant": false,
+					"sid": 738539514093896
+				},
 				{
 					"functionName": "ShowStorageStatus",
 					"functionDescription": "",
@@ -2898,6 +2970,16 @@
 			"isActiveOnStart": true,
 			"children": [
 				{
+					"eventType": "variable",
+					"name": "LeaderboardJsonData",
+					"type": "string",
+					"initialValue": "",
+					"comment": "",
+					"isStatic": false,
+					"isConstant": false,
+					"sid": 108442135321941
+				},
+				{
 					"eventType": "block",
 					"conditions": [
 						{
@@ -3035,64 +3117,137 @@
 									"eventType": "block",
 									"conditions": [
 										{
-											"id": "for",
+											"id": "compare-two-values",
 											"objectClass": "System",
-											"sid": 342722235327843,
+											"sid": 960323775144344,
 											"parameters": {
-												"name": "\"\"",
-												"start-index": "0",
-												"end-index": "PlaygamaBridge.LeaderboardEntriesCount-1"
+												"first-value": "PlaygamaBridge.LeaderboardEntriesCount",
+												"comparison": 4,
+												"second-value": "0"
 											}
 										}
 									],
 									"actions": [
 										{
-											"id": "log",
-											"objectClass": "Browser",
-											"sid": 419850091006940,
+											"id": "set-eventvar-value",
+											"objectClass": "System",
+											"sid": 631938365282102,
 											"parameters": {
-												"type": "log",
-												"message": "\"ID: \" & PlaygamaBridge.LeaderboardEntryId(loopindex)"
-											}
-										},
-										{
-											"id": "log",
-											"objectClass": "Browser",
-											"sid": 540023040299614,
-											"parameters": {
-												"type": "log",
-												"message": "\"Name: \" & PlaygamaBridge.LeaderboardEntryName(loopindex)"
-											}
-										},
-										{
-											"id": "log",
-											"objectClass": "Browser",
-											"sid": 556956366730569,
-											"parameters": {
-												"type": "log",
-												"message": "\"Photo: \" & PlaygamaBridge.LeaderboardEntryPhoto(loopindex)"
-											}
-										},
-										{
-											"id": "log",
-											"objectClass": "Browser",
-											"sid": 586712910646737,
-											"parameters": {
-												"type": "log",
-												"message": "\"Rank: \" & PlaygamaBridge.LeaderboardEntryRank(loopindex)"
-											}
-										},
-										{
-											"id": "log",
-											"objectClass": "Browser",
-											"sid": 414730143048212,
-											"parameters": {
-												"type": "log",
-												"message": "\"Score: \" & PlaygamaBridge.LeaderboardEntryScore(loopindex)"
+												"variable": "LeaderboardJsonData",
+												"value": "\"[\" & newline"
 											}
 										}
 									],
-									"sid": 389074577978903
+									"sid": 559328937084209,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "for",
+													"objectClass": "System",
+													"sid": 628321144151505,
+													"parameters": {
+														"name": "\"\"",
+														"start-index": "0",
+														"end-index": "PlaygamaBridge.LeaderboardEntriesCount-1"
+													}
+												}
+											],
+											"actions": [
+												{
+													"id": "log",
+													"objectClass": "Browser",
+													"sid": 701624624592951,
+													"parameters": {
+														"type": "log",
+														"message": "\"ID: \" & PlaygamaBridge.LeaderboardEntryId(loopindex)"
+													}
+												},
+												{
+													"id": "log",
+													"objectClass": "Browser",
+													"sid": 652480688937847,
+													"parameters": {
+														"type": "log",
+														"message": "\"Name: \" & PlaygamaBridge.LeaderboardEntryName(loopindex)"
+													}
+												},
+												{
+													"id": "log",
+													"objectClass": "Browser",
+													"sid": 272726987568509,
+													"parameters": {
+														"type": "log",
+														"message": "\"Photo: \" & PlaygamaBridge.LeaderboardEntryPhoto(loopindex)"
+													}
+												},
+												{
+													"id": "log",
+													"objectClass": "Browser",
+													"sid": 537897187148309,
+													"parameters": {
+														"type": "log",
+														"message": "\"Rank: \" & PlaygamaBridge.LeaderboardEntryRank(loopindex)"
+													}
+												},
+												{
+													"id": "log",
+													"objectClass": "Browser",
+													"sid": 728440560085741,
+													"parameters": {
+														"type": "log",
+														"message": "\"Score: \" & PlaygamaBridge.LeaderboardEntryScore(loopindex)"
+													}
+												},
+												{
+													"id": "add-to-eventvar",
+													"objectClass": "System",
+													"sid": 972842643524669,
+													"parameters": {
+														"variable": "LeaderboardJsonData",
+														"value": "\"  {\" & newline & \"    \"\"id\"\": \"\"\" & PlaygamaBridge.LeaderboardEntryId(LoopIndex) & \"\"\",\" & newline & \"    \"\"name\"\": \"\"\" & PlaygamaBridge.LeaderboardEntryName(LoopIndex) & \"\"\",\" & newline & \"    \"\"photo\"\": \"\"\" & PlaygamaBridge.LeaderboardEntryPhoto(LoopIndex) & \"\"\",\" & newline & \"    \"\"score\"\": \" & PlaygamaBridge.LeaderboardEntryScore(LoopIndex) & \",\" & newline & \"    \"\"rank\"\": \" & PlaygamaBridge.LeaderboardEntryRank(LoopIndex) & newline & \"  }\" & (LoopIndex < PlaygamaBridge.LeaderboardEntriesCount - 1 ? \",\" : \"\") & newline"
+													}
+												}
+											],
+											"sid": 583988171846670
+										}
+									]
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-two-values",
+											"objectClass": "System",
+											"sid": 403120207984134,
+											"parameters": {
+												"first-value": "PlaygamaBridge.LeaderboardEntriesCount",
+												"comparison": 4,
+												"second-value": "0"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "add-to-eventvar",
+											"objectClass": "System",
+											"sid": 284449380933403,
+											"parameters": {
+												"variable": "LeaderboardJsonData",
+												"value": "\"]\""
+											}
+										},
+										{
+											"id": "set-text",
+											"objectClass": "LeaderboardDataLabel",
+											"sid": 562375023019532,
+											"parameters": {
+												"text": "LeaderboardJsonData"
+											}
+										}
+									],
+									"sid": 425808409978735
 								}
 							]
 						}
@@ -3108,6 +3263,26 @@
 			"description": "",
 			"isActiveOnStart": true,
 			"children": [
+				{
+					"eventType": "variable",
+					"name": "PaymentCatalogData",
+					"type": "string",
+					"initialValue": "",
+					"comment": "",
+					"isStatic": false,
+					"isConstant": false,
+					"sid": 734898735612202
+				},
+				{
+					"eventType": "variable",
+					"name": "PurchaseData",
+					"type": "string",
+					"initialValue": "",
+					"comment": "",
+					"isStatic": false,
+					"isConstant": false,
+					"sid": 514545004385710
+				},
 				{
 					"eventType": "block",
 					"conditions": [
@@ -3325,7 +3500,17 @@
 									}
 								}
 							],
-							"actions": [],
+							"actions": [
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 674427059895190,
+									"parameters": {
+										"variable": "PaymentCatalogData",
+										"value": "\"[\" & newline"
+									}
+								}
+							],
 							"sid": 374819072901562,
 							"children": [
 								{
@@ -3378,11 +3563,55 @@
 												"type": "log",
 												"message": "\"Price Value: \" & PlaygamaBridge.PaymentsCatalogItemPropertyValue(loopindex(\"items\"), \"priceValue\")"
 											}
+										},
+										{
+											"id": "add-to-eventvar",
+											"objectClass": "System",
+											"sid": 565364611159955,
+											"parameters": {
+												"variable": "PaymentCatalogData",
+												"value": "\"  {\" & newline & \"    \"\"id\"\": \"\"\" & PlaygamaBridge.PaymentsCatalogItemPropertyValue(loopindex(\"items\"), \"id\") & \"\"\",\" & newline & \"    \"\"price\"\": \"\"\" & PlaygamaBridge.PaymentsCatalogItemPropertyValue(loopindex(\"items\"), \"price\") & \"\"\",\" & newline & \"    \"\"priceCurrencyCode\"\": \"\"\" & PlaygamaBridge.PaymentsCatalogItemPropertyValue(loopindex(\"items\"), \"priceCurrencyCode\") & \"\"\",\" & newline & \"    \"\"priceValue\"\": \" & PlaygamaBridge.PaymentsCatalogItemPropertyValue(loopindex(\"items\"), \"priceValue\") & newline & \"  }\" & (loopindex(\"items\") < PlaygamaBridge.PaymentsCatalogItemsCount - 1 ? \",\" : \"\") & newline"
+											}
 										}
 									],
 									"sid": 936974148196890
 								}
 							]
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-two-values",
+									"objectClass": "System",
+									"sid": 961778169001417,
+									"parameters": {
+										"first-value": "PlaygamaBridge.PaymentsCatalogItemsCount",
+										"comparison": 4,
+										"second-value": "0"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 773228749609303,
+									"parameters": {
+										"variable": "PaymentCatalogData",
+										"value": "\"]\""
+									}
+								},
+								{
+									"id": "set-text",
+									"objectClass": "PaymentsDataLabel",
+									"sid": 220927522249322,
+									"parameters": {
+										"text": "PaymentCatalogData"
+									}
+								}
+							],
+							"sid": 431358662818760
 						}
 					]
 				},
@@ -3435,7 +3664,17 @@
 									}
 								}
 							],
-							"actions": [],
+							"actions": [
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 106017815097387,
+									"parameters": {
+										"variable": "PurchaseData",
+										"value": "\"[\" & newline"
+									}
+								}
+							],
 							"sid": 257710419424750,
 							"children": [
 								{
@@ -3461,11 +3700,55 @@
 												"type": "log",
 												"message": "\"ID: \" & PlaygamaBridge.PaymentsPurchasePropertyValue(loopindex(\"purchases\"), \"id\")"
 											}
+										},
+										{
+											"id": "add-to-eventvar",
+											"objectClass": "System",
+											"sid": 616671894403611,
+											"parameters": {
+												"variable": "PurchaseData",
+												"value": "\"  {\" & newline & \"    \"\"id\"\": \"\"\" & PlaygamaBridge.PaymentsPurchasePropertyValue(loopindex(\"purchases\"), \"id\") & \"\"\"\" & newline & \"  }\" & (loopindex(\"purchases\") < PlaygamaBridge.PaymentsPurchasesCount - 1 ? \",\" : \"\") & newline"
+											}
 										}
 									],
 									"sid": 450153189605328
 								}
 							]
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-two-values",
+									"objectClass": "System",
+									"sid": 950431748209277,
+									"parameters": {
+										"first-value": "PlaygamaBridge.PaymentsPurchasesCount",
+										"comparison": 4,
+										"second-value": "0"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 338627540906069,
+									"parameters": {
+										"variable": "PurchaseData",
+										"value": "\"]\""
+									}
+								},
+								{
+									"id": "set-text",
+									"objectClass": "PaymentsDataLabel",
+									"sid": 971572568056016,
+									"parameters": {
+										"text": "PurchaseData"
+									}
+								}
+							],
+							"sid": 878747535260497
 						}
 					]
 				}

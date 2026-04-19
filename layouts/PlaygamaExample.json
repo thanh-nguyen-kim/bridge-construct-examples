@@ -839,7 +839,7 @@
 						"sid": 117086152860678,
 						"expanded": true
 					},
-					"showing": true,
+					"showing": false,
 					"locked": false,
 					"world": {
 						"x": 20,
@@ -880,7 +880,7 @@
 						"sid": 736295230083287,
 						"expanded": true
 					},
-					"showing": true,
+					"showing": false,
 					"locked": false,
 					"world": {
 						"x": 20,
@@ -915,7 +915,7 @@
 						"sid": 330537783720674,
 						"expanded": true
 					},
-					"showing": false,
+					"showing": true,
 					"locked": false,
 					"world": {
 						"x": 340,
@@ -1285,7 +1285,7 @@
 						"sid": 697306710480102,
 						"expanded": true
 					},
-					"showing": true,
+					"showing": false,
 					"locked": false,
 					"world": {
 						"x": 340,
@@ -5182,7 +5182,7 @@
 						"sid": 263361371847605,
 						"expanded": true
 					},
-					"showing": true,
+					"showing": false,
 					"locked": false,
 					"world": {
 						"x": 191.75494749965708,
@@ -5219,7 +5219,7 @@
 						"sid": 495822918276451,
 						"expanded": true
 					},
-					"showing": true,
+					"showing": false,
 					"locked": false,
 					"world": {
 						"x": 607.7256673489541,
@@ -5256,7 +5256,7 @@
 						"sid": 998047485393756,
 						"expanded": true
 					},
-					"showing": true,
+					"showing": false,
 					"locked": false,
 					"world": {
 						"x": 607,
@@ -5293,7 +5293,7 @@
 						"sid": 994941093857563,
 						"expanded": true
 					},
-					"showing": true,
+					"showing": false,
 					"locked": false,
 					"world": {
 						"x": 79,
@@ -5330,7 +5330,7 @@
 						"sid": 237580208258038,
 						"expanded": true
 					},
-					"showing": true,
+					"showing": false,
 					"locked": false,
 					"world": {
 						"x": 209.71316487622403,
@@ -5383,13 +5383,66 @@
 						"sid": 160392507476770,
 						"expanded": true
 					},
-					"showing": true,
+					"showing": false,
 					"locked": false,
 					"world": {
 						"x": 34.205010774935246,
 						"y": 341.0905861563667,
 						"width": 616.4827053702215,
 						"height": 443.4034610828835,
+						"originX": 0,
+						"originY": 0,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"z": 2,
+						"angle": 0
+					}
+				},
+				{
+					"type": "AllGamesDataLabel",
+					"properties": {
+						"text": "",
+						"enable-bbcode": true,
+						"font": "GeistMono-VariableFont_wght",
+						"size": 10,
+						"line-height": 0,
+						"bold": false,
+						"italic": false,
+						"color": [
+							0.8470588235294118,
+							0.7333333333333333,
+							1,
+							1
+						],
+						"horizontal-alignment": "left",
+						"vertical-alignment": "top",
+						"wrapping": "word",
+						"text-direction": "ltr",
+						"icon-set": -1,
+						"initially-visible": false,
+						"origin": "top-left",
+						"read-aloud": false
+					},
+					"uid": 132,
+					"sid": 621342111179468,
+					"tags": "",
+					"instanceVariables": {},
+					"behaviors": {},
+					"instanceFolderItem": {
+						"sid": 621342111179468,
+						"expanded": true
+					},
+					"showing": true,
+					"locked": false,
+					"world": {
+						"x": 27.252109628094907,
+						"y": 605.9474619322739,
+						"width": 621.1928225160293,
+						"height": 296.7698235064667,
 						"originX": 0,
 						"originY": 0,
 						"color": [
