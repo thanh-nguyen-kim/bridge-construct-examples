@@ -424,6 +424,7 @@
 				"ConsumeBtn",
 				"GetCatalogBtn",
 				"GetPurchaseBtn",
+				"PaymentsDataLabel",
 				"PaymentsPanel",
 				"PaymentsSupportLabel",
 				"ProductIDLabel1",

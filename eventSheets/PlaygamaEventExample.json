@@ -251,6 +251,11 @@
 								"click-type": "clicked",
 								"object-clicked": "GetServerTimeBtn"
 							}
+						},
+						{
+							"id": "is-visible",
+							"objectClass": "GetServerTimeBtn",
+							"sid": 193863703165082
 						}
 					],
 					"actions": [
@@ -315,6 +320,11 @@
 								"click-type": "clicked",
 								"object-clicked": "GetAllGamesBtn"
 							}
+						},
+						{
+							"id": "is-visible",
+							"objectClass": "GetAllGamesBtn",
+							"sid": 725023581281074
 						}
 					],
 					"actions": [
@@ -455,9 +465,9 @@
 							],
 							"actions": [
 								{
-									"id": "set-eventvar-value",
+									"id": "add-to-eventvar",
 									"objectClass": "System",
-									"sid": 992278117709528,
+									"sid": 214489584651571,
 									"parameters": {
 										"variable": "AllGamesData",
 										"value": "\"]\""
@@ -488,6 +498,11 @@
 								"click-type": "clicked",
 								"object-clicked": "GetGameByIDBtn"
 							}
+						},
+						{
+							"id": "is-visible",
+							"objectClass": "GetGameByIDBtn",
+							"sid": 830865329262597
 						}
 					],
 					"actions": [
@@ -609,6 +624,11 @@
 								"click-type": "clicked",
 								"object-clicked": "SendGameReadyBtn"
 							}
+						},
+						{
+							"id": "is-visible",
+							"objectClass": "SendGameReadyBtn",
+							"sid": 136150023875220
 						}
 					],
 					"actions": [
@@ -653,6 +673,11 @@
 								"click-type": "clicked",
 								"object-clicked": "LevelStartBtn"
 							}
+						},
+						{
+							"id": "is-visible",
+							"objectClass": "LevelStartBtn",
+							"sid": 278629875416508
 						}
 					],
 					"actions": [
@@ -715,6 +740,11 @@
 								"click-type": "clicked",
 								"object-clicked": "LevelCompleteBtn"
 							}
+						},
+						{
+							"id": "is-visible",
+							"objectClass": "LevelCompleteBtn",
+							"sid": 977092701683251
 						}
 					],
 					"actions": [
@@ -777,6 +807,11 @@
 								"click-type": "clicked",
 								"object-clicked": "LevelFailBtn"
 							}
+						},
+						{
+							"id": "is-visible",
+							"objectClass": "LevelFailBtn",
+							"sid": 650696592104862
 						}
 					],
 					"actions": [
@@ -839,6 +874,11 @@
 								"click-type": "clicked",
 								"object-clicked": "SendAchievementBtn"
 							}
+						},
+						{
+							"id": "is-visible",
+							"objectClass": "SendAchievementBtn",
+							"sid": 434170147366327
 						}
 					],
 					"actions": [
@@ -874,6 +914,11 @@
 								"click-type": "clicked",
 								"object-clicked": "LevelPauseBtn"
 							}
+						},
+						{
+							"id": "is-visible",
+							"objectClass": "LevelPauseBtn",
+							"sid": 155547244065654
 						}
 					],
 					"actions": [
@@ -918,6 +963,11 @@
 								"click-type": "clicked",
 								"object-clicked": "LevelResumeBtn"
 							}
+						},
+						{
+							"id": "is-visible",
+							"objectClass": "LevelResumeBtn",
+							"sid": 133335400754982
 						}
 					],
 					"actions": [
@@ -1247,6 +1297,11 @@
 								"click-type": "clicked",
 								"object-clicked": "LoadDataBtn"
 							}
+						},
+						{
+							"id": "is-visible",
+							"objectClass": "LoadDataBtn",
+							"sid": 719339208675102
 						}
 					],
 					"actions": [],
@@ -1395,6 +1450,11 @@
 								"click-type": "clicked",
 								"object-clicked": "SaveDataBtn"
 							}
+						},
+						{
+							"id": "is-visible",
+							"objectClass": "SaveDataBtn",
+							"sid": 939905609068584
 						}
 					],
 					"actions": [],
@@ -1539,6 +1599,11 @@
 								"click-type": "clicked",
 								"object-clicked": "DeleteDataBtn"
 							}
+						},
+						{
+							"id": "is-visible",
+							"objectClass": "DeleteDataBtn",
+							"sid": 510341858039406
 						}
 					],
 					"actions": [],
@@ -1679,6 +1744,11 @@
 								"click-type": "clicked",
 								"object-clicked": "LocalStorageRadioBtn"
 							}
+						},
+						{
+							"id": "is-visible",
+							"objectClass": "LocalStorageRadioBtn",
+							"sid": 557775023535967
 						}
 					],
 					"actions": [
@@ -1724,6 +1794,11 @@
 								"click-type": "clicked",
 								"object-clicked": "PlatformStorageRadioBtn"
 							}
+						},
+						{
+							"id": "is-visible",
+							"objectClass": "PlatformStorageRadioBtn",
+							"sid": 622801958276556
 						}
 					],
 					"actions": [
@@ -1832,6 +1907,11 @@
 								"click-type": "clicked",
 								"object-clicked": "ShowBannerBtn"
 							}
+						},
+						{
+							"id": "is-visible",
+							"objectClass": "ShowBannerBtn",
+							"sid": 921546871961489
 						}
 					],
 					"actions": [
@@ -1901,6 +1981,11 @@
 								"click-type": "clicked",
 								"object-clicked": "HideBannerBtn"
 							}
+						},
+						{
+							"id": "is-visible",
+							"objectClass": "HideBannerBtn",
+							"sid": 512232228600364
 						}
 					],
 					"actions": [
@@ -1966,6 +2051,11 @@
 								"click-type": "clicked",
 								"object-clicked": "ShowInterstitialBtn"
 							}
+						},
+						{
+							"id": "is-visible",
+							"objectClass": "ShowInterstitialBtn",
+							"sid": 102171825935228
 						}
 					],
 					"actions": [
@@ -2055,6 +2145,11 @@
 								"click-type": "clicked",
 								"object-clicked": "ShowRewardBtn"
 							}
+						},
+						{
+							"id": "is-visible",
+							"objectClass": "ShowRewardBtn",
+							"sid": 444378298193454
 						}
 					],
 					"actions": [
@@ -2081,6 +2176,11 @@
 								"click-type": "clicked",
 								"object-clicked": "CheckAdBlockBtn"
 							}
+						},
+						{
+							"id": "is-visible",
+							"objectClass": "CheckAdBlockBtn",
+							"sid": 944885757810851
 						}
 					],
 					"actions": [
@@ -2235,6 +2335,11 @@
 								"click-type": "clicked",
 								"object-clicked": "AuthBtn"
 							}
+						},
+						{
+							"id": "is-visible",
+							"objectClass": "AuthBtn",
+							"sid": 837379079538023
 						}
 					],
 					"actions": [
@@ -2348,6 +2453,11 @@
 								"click-type": "clicked",
 								"object-clicked": "ShareBtn"
 							}
+						},
+						{
+							"id": "is-visible",
+							"objectClass": "ShareBtn",
+							"sid": 868998647928257
 						}
 					],
 					"actions": [
@@ -2437,6 +2547,11 @@
 								"click-type": "clicked",
 								"object-clicked": "JoinBtn"
 							}
+						},
+						{
+							"id": "is-visible",
+							"objectClass": "JoinBtn",
+							"sid": 833281837526205
 						}
 					],
 					"actions": [
@@ -2526,6 +2641,11 @@
 								"click-type": "clicked",
 								"object-clicked": "FavouriteBtn"
 							}
+						},
+						{
+							"id": "is-visible",
+							"objectClass": "FavouriteBtn",
+							"sid": 732246402728800
 						}
 					],
 					"actions": [
@@ -2606,6 +2726,11 @@
 								"click-type": "clicked",
 								"object-clicked": "HomeBtn"
 							}
+						},
+						{
+							"id": "is-visible",
+							"objectClass": "HomeBtn",
+							"sid": 274488988925970
 						}
 					],
 					"actions": [
@@ -2686,6 +2811,11 @@
 								"click-type": "clicked",
 								"object-clicked": "InviteBtn"
 							}
+						},
+						{
+							"id": "is-visible",
+							"objectClass": "InviteBtn",
+							"sid": 930044326202078
 						}
 					],
 					"actions": [
@@ -2775,6 +2905,11 @@
 								"click-type": "clicked",
 								"object-clicked": "PostBtn"
 							}
+						},
+						{
+							"id": "is-visible",
+							"objectClass": "PostBtn",
+							"sid": 630648502464666
 						}
 					],
 					"actions": [
@@ -2912,6 +3047,11 @@
 								"click-type": "clicked",
 								"object-clicked": "RateBtn"
 							}
+						},
+						{
+							"id": "is-visible",
+							"objectClass": "RateBtn",
+							"sid": 450625700141389
 						}
 					],
 					"actions": [
@@ -3012,6 +3152,11 @@
 								"click-type": "clicked",
 								"object-clicked": "SetScoreBtn"
 							}
+						},
+						{
+							"id": "is-visible",
+							"objectClass": "SetScoreBtn",
+							"sid": 720174423941348
 						}
 					],
 					"actions": [
@@ -3075,6 +3220,11 @@
 								"click-type": "clicked",
 								"object-clicked": "GetEntriesBtn"
 							}
+						},
+						{
+							"id": "is-visible",
+							"objectClass": "GetEntriesBtn",
+							"sid": 300406162775974
 						}
 					],
 					"actions": [
@@ -3330,6 +3480,11 @@
 								"click-type": "clicked",
 								"object-clicked": "PurchaseBtn"
 							}
+						},
+						{
+							"id": "is-visible",
+							"objectClass": "PurchaseBtn",
+							"sid": 654563107915844
 						}
 					],
 					"actions": [
@@ -3401,6 +3556,11 @@
 								"click-type": "clicked",
 								"object-clicked": "ConsumeBtn"
 							}
+						},
+						{
+							"id": "is-visible",
+							"objectClass": "ConsumeBtn",
+							"sid": 851314033568179
 						}
 					],
 					"actions": [
@@ -3463,6 +3623,11 @@
 								"click-type": "clicked",
 								"object-clicked": "GetCatalogBtn"
 							}
+						},
+						{
+							"id": "is-visible",
+							"objectClass": "GetCatalogBtn",
+							"sid": 309329208083012
 						}
 					],
 					"actions": [
@@ -3594,9 +3759,9 @@
 							],
 							"actions": [
 								{
-									"id": "set-eventvar-value",
+									"id": "add-to-eventvar",
 									"objectClass": "System",
-									"sid": 773228749609303,
+									"sid": 143448274296211,
 									"parameters": {
 										"variable": "PaymentCatalogData",
 										"value": "\"]\""
@@ -3627,6 +3792,11 @@
 								"click-type": "clicked",
 								"object-clicked": "GetPurchaseBtn"
 							}
+						},
+						{
+							"id": "is-visible",
+							"objectClass": "GetPurchaseBtn",
+							"sid": 546709800331954
 						}
 					],
 					"actions": [
@@ -3731,9 +3901,9 @@
 							],
 							"actions": [
 								{
-									"id": "set-eventvar-value",
+									"id": "add-to-eventvar",
 									"objectClass": "System",
-									"sid": 338627540906069,
+									"sid": 939328053835096,
 									"parameters": {
 										"variable": "PurchaseData",
 										"value": "\"]\""
@@ -3795,6 +3965,11 @@
 								"click-type": "clicked",
 								"object-clicked": "UnlockBtn"
 							}
+						},
+						{
+							"id": "is-visible",
+							"objectClass": "UnlockBtn",
+							"sid": 505212135781696
 						}
 					],
 					"actions": [
@@ -3887,6 +4062,11 @@
 								"click-type": "clicked",
 								"object-clicked": "GetListBtn"
 							}
+						},
+						{
+							"id": "is-visible",
+							"objectClass": "GetListBtn",
+							"sid": 636326641285480
 						}
 					],
 					"actions": [
@@ -4117,6 +4297,11 @@
 								"click-type": "clicked",
 								"object-clicked": "NativePopUpBtn"
 							}
+						},
+						{
+							"id": "is-visible",
+							"objectClass": "NativePopUpBtn",
+							"sid": 340670832691891
 						}
 					],
 					"actions": [
@@ -4215,6 +4400,11 @@
 								"click-type": "clicked",
 								"object-clicked": "RemoteGetBtn"
 							}
+						},
+						{
+							"id": "is-visible",
+							"objectClass": "RemoteGetBtn",
+							"sid": 944011495015081
 						}
 					],
 					"actions": [
